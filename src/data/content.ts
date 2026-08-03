@@ -1,0 +1,146 @@
+import type { PromptTemplate, PricingPlan, FAQItem, ProjectType } from '../types';
+
+export const projectTypes: { id: ProjectType; name: string; icon: string }[] = [
+  { id: 'villa', name: 'Villa', icon: '🏰' },
+  { id: 'luxury_home', name: 'Luxury Home', icon: '🏡' },
+  { id: 'apartment', name: 'Apartment', icon: '🏢' },
+  { id: 'interior', name: 'Interior Design', icon: '🛋️' },
+  { id: 'office', name: 'Office Building', icon: '🏬' },
+  { id: 'hotel', name: 'Hotel', icon: '🏨' },
+  { id: 'resort', name: 'Resort', icon: '🏝️' },
+  { id: 'mosque', name: 'Mosque', icon: '🕌' },
+  { id: 'restaurant', name: 'Restaurant', icon: '🍽️' },
+  { id: 'cafe', name: 'Cafe', icon: '☕' },
+  { id: 'hospital', name: 'Hospital', icon: '🏥' },
+  { id: 'school', name: 'School', icon: '🏫' },
+  { id: 'commercial', name: 'Commercial', icon: '🏪' },
+  { id: 'landscape', name: 'Landscape', icon: '🌳' },
+  { id: 'urban_planning', name: 'Urban Planning', icon: '🏙️' },
+];
+
+export const promptTemplates: PromptTemplate[] = [
+  {
+    id: 'tpl-1',
+    title: 'Modern Luxury Villa',
+    prompt: 'Modern luxury villa with infinity pool, floor-to-ceiling glass walls, and minimalist landscaping',
+    project_type: 'villa',
+    icon: '🏰',
+  },
+  {
+    id: 'tpl-2',
+    title: 'Scandinavian Interior',
+    prompt: 'Scandinavian-style living room interior with natural wood, hygge atmosphere, and large windows',
+    project_type: 'interior',
+    icon: '🛋️',
+  },
+  {
+    id: 'tpl-3',
+    title: 'Tropical Resort',
+    prompt: 'Tropical beachfront resort with overwater bungalows, palm trees, and crystal clear water',
+    project_type: 'resort',
+    icon: '🏝️',
+  },
+  {
+    id: 'tpl-4',
+    title: 'Contemporary Mosque',
+    prompt: 'Contemporary mosque with geometric patterns, calligraphy, and modern Islamic architecture',
+    project_type: 'mosque',
+    icon: '🕌',
+  },
+  {
+    id: 'tpl-5',
+    title: 'Urban Plaza',
+    prompt: 'Modern urban plaza with green spaces, water features, and contemporary street furniture',
+    project_type: 'urban_planning',
+    icon: '🏙️',
+  },
+  {
+    id: 'tpl-6',
+    title: 'Luxury Hotel Lobby',
+    prompt: 'Luxury hotel lobby with marble floors, chandelier, and grand staircase',
+    project_type: 'hotel',
+    icon: '🏨',
+  },
+];
+
+export const randomInspirations: string[] = [
+  'Modern luxury villa with pool',
+  'Minimalist Japanese-inspired house with zen garden',
+  'Mediterranean-style resort overlooking the sea',
+  'Futuristic eco-friendly office building',
+  'Industrial loft interior with exposed brick',
+  'Contemporary mosque with geometric facades',
+  'Rooftop garden restaurant with city skyline view',
+  'Glass house in a forest setting',
+  'Brutalist concrete museum with dramatic lighting',
+  'Art deco hotel lobby with gold accents',
+  'Sustainable treehouse with solar panels',
+  'Modern hospital with healing garden courtyard',
+];
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    id: 'free',
+    name: 'Free',
+    price: 0,
+    interval: 'month',
+    description: 'Perfect for trying out ArchiMind AI',
+    features: [
+      '5 generations per month',
+      'Standard resolution images',
+      'Prompt history',
+      'Community gallery access',
+    ],
+    cta: 'Get Started',
+  },
+  {
+    id: 'pro',
+    name: 'Pro',
+    price: 29,
+    interval: 'month',
+    description: 'For architects and designers who need more',
+    features: [
+      '100 generations per month',
+      'High-resolution downloads (4K)',
+      'Image variations',
+      'Compare generations',
+      'Prompt templates',
+      'No watermark',
+      'Priority generation queue',
+    ],
+    highlighted: true,
+    cta: 'Start Pro Trial',
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise',
+    price: 99,
+    interval: 'month',
+    description: 'For teams and organizations',
+    features: [
+      'Unlimited generations',
+      '8K ultra-high resolution',
+      'Team collaboration',
+      'API access',
+      'Custom prompt templates',
+      'Dedicated support',
+      'SSO & SAML',
+      'Usage analytics',
+    ],
+    cta: 'Contact Sales',
+  },
+];
+
+export const faqData: FAQItem[] = [
+  { category: 'General', question: 'What is ArchiMind AI?', answer: 'ArchiMind AI is an AI-powered platform that transforms simple text descriptions into photorealistic architectural visualizations using OpenAI GPT and image generation models.' },
+  { category: 'General', question: 'How does it work?', answer: 'You enter a simple architectural idea. Our AI enhances it into a detailed 200-400 word professional prompt, then automatically generates a photorealistic rendering — no extra clicks needed.' },
+  { category: 'General', question: 'What types of projects are supported?', answer: 'Villas, luxury homes, apartments, interiors, offices, hotels, resorts, mosques, restaurants, cafes, hospitals, schools, commercial buildings, landscape architecture, and urban planning.' },
+  { category: 'Pricing', question: 'Is there a free plan?', answer: 'Yes! The Free plan includes 5 generations per month with standard resolution. No credit card required.' },
+  { category: 'Pricing', question: 'Can I cancel anytime?', answer: 'Absolutely. You can upgrade, downgrade, or cancel your plan at any time from your account settings.' },
+  { category: 'Pricing', question: 'Do you offer refunds?', answer: 'If you are not satisfied within the first 14 days of a paid plan, contact us for a full refund.' },
+  { category: 'Technical', question: 'What image quality can I expect?', answer: 'Images are generated in photorealistic 8K quality with PBR materials, cinematic lighting, HDR, global illumination, and Unreal Engine / V-Ray quality rendering.' },
+  { category: 'Technical', question: 'Can I download the generated images?', answer: 'Yes. Pro and Enterprise plans support high-resolution downloads up to 8K. Free plan includes standard resolution.' },
+  { category: 'Technical', question: 'Are the designs construction-ready?', answer: 'No. All generated images are conceptual visualizations and must be reviewed by licensed architects before construction.' },
+  { category: 'Privacy', question: 'Who owns the generated images?', answer: 'You own all images you generate. We do not claim rights over your designs.' },
+  { category: 'Privacy', question: 'Is my data secure?', answer: 'We use enterprise-grade encryption for all data in transit and at rest. Your prompts and images are private.' },
+];
